@@ -102,3 +102,30 @@ In the code above:
 
 Throwing errors is a crucial part of error handling in JavaScript, as it allows you to handle exceptional cases in your code and provide meaningful error messages to assist in debugging and troubleshooting.
 
+***
+
+**Additional method for Promises**:
+
+The ```.finally()``` method is used in JavaScript to specify a function that should be executed when a Promise, like the one returned by fetch, is settled. A Promise can be in one of three states: pending, fulfilled (resolved), or rejected.
+
+Here's an example:
+
+```
+fetch('https://api.example.com/data')
+  .then(response => {
+    // Handle the successful response here
+    console.log('Success:', response);
+  })
+  .catch(error => {
+    // Handle any errors here
+    console.error('Error:', error);
+  })
+  .finally(() => {
+    // This block will be executed no matter what, whether the Promise is resolved or rejected
+    console.log('This code always runs, regardless of success or failure.');
+  });
+```
+
+In this example, if the fetch request is successful, the code inside the first ```.then()``` block will execute. If there's an error, the code inside the ```.catch()``` block will run. And no matter what, the code inside the ```.finally()``` block will always be executed. It's often used for cleanup operations or actions that should occur in both success and error scenarios.
+
+The ```.finally()``` method is a powerful tool for handling situations where you want to ensure certain code runs regardless of the outcome of a Promise. It's a helpful way to structure your error handling and cleanup operations.
