@@ -7,7 +7,7 @@ Synchronous is the opposite of Asynchronous.
 
 Synchronous simply means that the code is executed line by line. In the exact order of execution that we defined in our code. Just like in this example:
 
-```
+```js
 const p = document.querySelector('.p');
 p.textContent = 'My name is Jonas! ';
 alert('Text set!');
@@ -21,7 +21,7 @@ Each line of code **waits** for previous line to finish execution. This can crea
 **_Asynchronous_**
 
 In this example, the first line of code is still synchronous, then we move to the second line in a synchronous way. But then we encounter the setTimeout function which will basically start a timer in a asynchronous way. So this means that the timer will essentially run in the background without preventing the main code from executing, we also defined a callback function which will not be executed now but only after the timer has finished running. This callback function is asynchronous JavaScript, it is asynchronous because it't only going to be executed after a task that is running in the background finishes execution, in this case, that is the timer. So this callback is defined and then we immediately move on to the next line. So the main code is not being blocked and execution does not wait for the asynchronous timer to finish its work.
-```
+```js
 const p = document.querySelector('.p');
 setTimeout(function () {
 p.textContent = 'My name is Jonas!';
