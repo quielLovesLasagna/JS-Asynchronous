@@ -8,7 +8,7 @@ When using the ```.then()``` method with ***two callback*** functions, you're ex
 
 Here's an example:
 
-```
+```js
 fetch('https://api.example.com/data')
   .then(
     function(response) {
@@ -31,7 +31,7 @@ You can also use the ```.catch()``` method to handle errors in a more centralize
 
 Here's an example:
 
-```
+```js
 fetch('https://api.example.com/data')
   .then(response => {
     // Handle a successful response here
@@ -69,7 +69,7 @@ this will cause serious problems in our code. To solve this, we can ```Manually 
 
 Here's am example:
 
-```
+```js
 fetch('https://api.example.com/data')
   .then(response => {
     // Handle a successful response here
@@ -110,7 +110,7 @@ The ```.finally()``` method is used in JavaScript to specify a function that sho
 
 Here's an example:
 
-```
+```js
 fetch('https://api.example.com/data')
   .then(response => {
     // Handle the successful response here
