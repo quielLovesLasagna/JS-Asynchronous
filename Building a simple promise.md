@@ -5,7 +5,7 @@
 You start by creating a ```new Promise``` object. It takes a single argument, a function that, in turn, takes two parameters, ```resolve``` and ```reject```. 
 These are functions you'll call to indicate whether the promise is fulfilled or rejected.
 
-```
+```js
 const myPromise = new Promise((resolve, reject) => {
   // Your async code goes here
 });
@@ -22,7 +22,7 @@ const myPromise = new Promise((resolve, reject) => {
 Inside the function you passed to the Promise, you write your asynchronous code. When the task is successful, you call resolve. 
 If there's an error, you call reject. For example, let's simulate a simple delay:
 
-```
+```js
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     const randomNumber = Math.random();
@@ -39,7 +39,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 Now, you can use ```.then()``` to handle the resolved value and ```.catch()``` for errors. For instance:
 
-```
+```js
 myPromise
   .then((result) => {
     console.log("Success! Random number is: " + result);
@@ -55,7 +55,7 @@ Here, if the promise resolves successfully, it prints the random number. If ther
 
 Promises can also be chained. For example, you can add another ```.then()``` to handle the result from the first ```.then()```.
 
-```
+```js
 myPromise
   .then((result) => {
     console.log("Success! Random number is: " + result);
@@ -73,7 +73,7 @@ myPromise
 
 <h2>A way to easily create a fulfilled or a rejected promise IMMEDIATELY</h2>
 
-```
+```js
 Promise.resolve("This is resolved immediately").then((res) => console.log(res));
 Promise.reject(new Error("This is rejected immediately")).catch((err) =>
   console.error(err)
