@@ -6,7 +6,7 @@ Callback hell occurs when you have several nested callbacks in your code, often 
 
 Here's am example:
 
-```
+```js
  setTimeout(() => {
    console.log("1 second passed");
    setTimeout(() => {
