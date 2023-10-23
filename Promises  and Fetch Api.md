@@ -8,7 +8,7 @@ The Fetch API is a modern way to make network requests, such as fetching data fr
 
 To fetch data from a server, you use the ```fetch()``` function. It takes the URL as its argument. You should pass the URL of the resource you want to request data from. This URL could point to a web API, a server, or any online resource that provides data.
 
-```
+```js
 const request = fetch('https://jsonplaceholder.typicode.com/posts/1');
 ```
 
@@ -16,7 +16,7 @@ const request = fetch('https://jsonplaceholder.typicode.com/posts/1');
 
 The ```fetch()``` function returns a promise that resolves to the Response object. You can use ```.then()``` to work with the response. This is called ***Consuming the Promise*** with ```.then()```.
 
-```
+```js
 request.then(response => {
   // Check if the response is okay (status 200)
   if (!response.ok) {
@@ -30,7 +30,7 @@ request.then(response => {
 3) ***Chaining Promises:***
 You can chain ```.then()``` to process the data. This allows you to handle the response in multiple steps.
 
-```
+```js
 fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then((response) => response.json())
   .then((data) => {
