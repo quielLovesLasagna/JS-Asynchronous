@@ -28,7 +28,7 @@ Once the fetch operation is done (whether it succeeds or fails), the code after 
 Stopping execution in an async function, (which is what we have in the example above) is not a problem, it will ```not``` block the execution. Because the async function is ```running asynchronously``` in the background.
 Therefore, it is not blocking the main thread of execution (it's not blocking the call stack). 
 
-That's what so special about ```async await```. It makes out code look like a regular synchronous code while behind the scenes everything is in fact asynchronous.
+That's what so special about ```async await```. It makes our code look like a regular synchronous code while behind the scenes everything is in fact asynchronous.
 
 As soon as the promise (from fetch) is resolved, then the value of the whole await is gonna be the resolved value of the promise (from the fetch function), so we can store it to a variable.
 
