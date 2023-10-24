@@ -34,7 +34,8 @@ As soon as the promise (from fetch) is resolved, then the value of the whole awa
 
 ```async/await``` is simply syntactic sugar over the ```then``` method in promises. So of course behind the scenes, we are still using promises. We are just using a different way of consuming them.
 
+***
 
-
+**Note**: An async function in JavaScript ```always returns a promise```, regardless of what's inside the function. This is one of the key features of async functions.
 
 
