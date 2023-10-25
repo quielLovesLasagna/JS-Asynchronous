@@ -36,6 +36,51 @@ As soon as the promise (from fetch) is resolved, then the value of the whole awa
 
 ***
 
-**Note**: An async function in JavaScript ```always returns a promise```, regardless of what's inside the function. This is one of the key features of async functions.
+**Note**: 
+
+- An async function in JavaScript ```always returns a promise```, regardless of what's inside the function. This is one of the key features of async functions.
+- If we don't use ```await``` inside the async function, it will behave differently -> it doesn't wait for the asynchronous task to complete before moving to the next line of code.
+
+Here's an example:
+
+```js
+async function exampleAsyncFunction() {
+  console.log("Start");
+  // Without await, this promise will not be waited for.
+  fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(data => console.log(data));
+  console.log("End");
+}
+
+exampleAsyncFunction();
+console.log("Function call finished");
+```
+
+In this example, "Start" and "End" will be logged before the data is fetched because there's ```no await```. This can be useful in some cases when you want to initiate multiple asynchronous tasks and don't need to wait for their results before proceeding with other tasks.
+
+But, keep in mind that if you do need the result of the asynchronous operation, you should use await to ensure that your code doesn't continue until the promise is resolved. If you omit await, you might not get the expected behavior in your program.
+
+Looking back at the example, we didn't use await, the async function will not stop its execution. It will continue running, and this can potentially block other tasks in the call stack.
+
+When you make an asynchronous call without await, like the fetch in the example, it starts a network request in the background, but the function doesn't wait for it to complete.
+
+If there are other functions in the call stack (the stack of function calls in your program), they will execute independently, which can lead to non-deterministic behavior. In other words, there's no guarantee about the order in which various parts of your code will finish.
+
+So, not using await can lead to a lack of control over the order of execution in your program, which is usually not the behavior you want when dealing with asynchronous operations.
+
+If you do want your code to wait for the asynchronous operation to complete, you should use await. This ensures that the function will pause until the promise is resolved and then continue executing the subsequent code. This way, you have better control over the flow of your program and can handle the asynchronous result more predictably.
+
+**Additions**:
+Marking a function as async explicitly tells JavaScript that this function will perform asynchronous operations. This designation makes it return a promise.
+
+When you use await inside an async function, it tells the function to pause execution until the awaited promise is resolved. This allows you to handle the result of that asynchronous task in a synchronous-like manner.
+
+If you don't use await inside the async function, it doesn't stop the function from being asynchronous. The function still executes asynchronously; it just doesn't wait for the asynchronous task to complete before moving on to the next lines of code.
+
+
+To summarize, adding async to a function always makes it asynchronous. Whether you use await inside it or not determines how you handle the asynchronous tasks within the function, but it doesn't change the fact that the function itself remains asynchronous and can potentially run concurrently **(at the same time; simultaneously)** with other code.
+
+
 
 
