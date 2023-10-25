@@ -81,6 +81,8 @@ If you don't use await inside the async function, it doesn't stop the function f
 
 To summarize, adding async to a function always makes it asynchronous. Whether you use await inside it or not determines how you handle the asynchronous tasks within the function, but it doesn't change the fact that the function itself remains asynchronous and can potentially run concurrently **(at the same time; simultaneously)** with other code.
 
+***
 
+Watch [this](https://www.youtube.com/watch?v=V_Kr9OSfDeU&t=334s) to learn more about async/await.
 
 
