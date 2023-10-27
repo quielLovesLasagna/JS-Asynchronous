@@ -42,8 +42,7 @@ Together, they are communication protocols that defined exacatly how data travel
 Anyway, it's time to make our request. The request that we make is an HTTP request, where HTTP stands for **Hyper Transfer Protocol**. So after TCP/IP, HTTPS is another communication protocol, by the way, a communication protocol is simply a system of rules that allows two or more parties to communicate. In the case of HTTP, it's just a protocol that allows clients and web servers to communicate, and that works by sending requests and response messages from client to server and back. A request message will look something like the image below:
 
 ![Request message](./Images/requestMsg.png)
-
-
+![Request message](./Images/httpRequest.png)
 
 The beginning of the message is the most important part called the start line. This containes the HTTP method that is used in the request then the request target and the HTTP version. For HTTP request, there are many available but the most important ones are: **GET** for simply requesting data, **POST** for sending data, and **PUT** and **PATCH**, to basically modify data. As you can see, that an HTTP request to a server is not only for getting data but we can also send data. 
 
@@ -55,11 +54,17 @@ Finally, in the case we're sending data to the server, there will also be a requ
 
 In addition, there's also HTTPS. The main difference between HTTP and HTTPS is that HTTPS is encrypted using TLS or SSL (which are some more protocols). The logic behind HTTP requests and responses still applies to HTTPS.
 
+#
 
+So our request if formed and now it hits the server, which will then be working on it until it has our data or web page ready to send back, once it's ready, it will send it back using am HTTP response. The HTTP response message actually looks similar to the request: with a start line, headers and a body.
 
+The start line has besides the version also a status code and a message. These are used to let the client know wheter the request has been successful or failed. For example, 200 means OKAY. The status code that everyone knows is 404, which means page not found.  
 
+The response headers are information about the response itself.
 
+The response body, which is present in most reponses. This body usually containes the JSON data coming back from an API or the HTML ofthe web page what we requested. 
 
+![Reponse](./Images/httpReponse.png)
 
 
 
