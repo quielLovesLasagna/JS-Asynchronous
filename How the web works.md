@@ -37,6 +37,7 @@ Once we have the real IP address, a **TCP/IP socket connnection** is esthablishe
 What are TCP and IP?
 - TCP is the Transmission Control Protocol.
 - IP is the Internet Protocol.
+
 Together, they are communication protocols that defined exacatly how data travels across the web they are basically the internet's fundamental control system because they are the ones who set the rules aboout how data moves on the internet.
 
 Anyway, it's time to make our request. The request that we make is an HTTP request, where HTTP stands for **Hyper Transfer Protocol**. So after TCP/IP, HTTPS is another communication protocol, by the way, a communication protocol is simply a system of rules that allows two or more parties to communicate. In the case of HTTP, it's just a protocol that allows clients and web servers to communicate, and that works by sending requests and response messages from client to server and back. A request message will look something like the image below:
